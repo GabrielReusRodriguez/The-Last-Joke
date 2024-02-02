@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqihsr14yb47t"]
+[gd_scene load_steps=24 format=3 uid="uid://bqihsr14yb47t"]
 
 [ext_resource type="Texture2D" uid="uid://bb6ig7fqkcsib" path="res://sprites/sprites-map-background/brown-background/brown-65%opacity-1048-647.png" id="1_ju8c3"]
 [ext_resource type="AudioStream" uid="uid://ot7mrv2wchya" path="res://sounds/exampleMap.mp3" id="2_kbc0c"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/MapScene/CharacterBody2D.gd" id="8_jmaec"]
 [ext_resource type="Texture2D" uid="uid://cqjkhcvrdiacl" path="res://sprites/sprites-gummy-bear/gummy-bear-545x624.png" id="11_lli02"]
 [ext_resource type="PackedScene" uid="uid://hjy1ts84s56d" path="res://area_2d.tscn" id="11_sgwm0"]
+[ext_resource type="Texture2D" uid="uid://cc4ul0wan35rj" path="res://sprites/sprites-clown/clown-blue-545x624.png" id="13_kxmul"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iyufd"]
 particles_animation = true
@@ -8742,6 +8743,26 @@ flip_h = true
 position = Vector2(554, 526)
 shape = SubResource("CapsuleShape2D_h2cks")
 
-[node name="portal" parent="." instance=ExtResource("11_sgwm0")]
+[node name="Green" parent="." instance=ExtResource("11_sgwm0")]
 position = Vector2(70, 133)
 scenes = "prueba2"
+
+[node name="Yellow" parent="Green" instance=ExtResource("11_sgwm0")]
+position = Vector2(751, 290)
+scenes = "prueba2"
+
+[node name="Purple" parent="Green" instance=ExtResource("11_sgwm0")]
+position = Vector2(786, 33)
+scenes = "prueba2"
+
+[node name="Blue" parent="Green" instance=ExtResource("11_sgwm0")]
+position = Vector2(403, -67)
+scenes = "prueba2"
+
+[node name="Red" parent="Green" instance=ExtResource("11_sgwm0")]
+position = Vector2(93, 287)
+scenes = "prueba2"
+
+[node name="Clown-blue-545x624" type="Sprite2D" parent="."]
+position = Vector2(971, 469)
+texture = ExtResource("13_kxmul")
