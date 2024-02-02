@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2bsjrb8uq54n"]
+[gd_scene load_steps=13 format=3 uid="uid://b2bsjrb8uq54n"]
 
 [ext_resource type="Script" path="res://scripts/CombatScene/combate.gd" id="1_76hwp"]
 [ext_resource type="Texture2D" uid="uid://c42t0dfvqpwio" path="res://sprites/sprites-carp/combat-carp-65%opacity-1048-647.png" id="2_h1b21"]
@@ -34,6 +34,43 @@ func _on_keypressed_timer_timeout():
 	#texto_objetivo.set_visible_characters(texto_objetivo.text.length())			
 	#texto_objetivo.text = quested_text
 "
+
+[sub_resource type="Animation" id="Animation_fdgyt"]
+resource_name = "nariz_5"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blue_nose:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.8, 1, 1.3, 1.5, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-117.339, -54.2737), Vector2(-228.888, -213.891), Vector2(-355.31, 253.559), Vector2(-418.521, 59.7386), Vector2(-478.014, 257.36), Vector2(-537.506, 181.352), Vector2(-589.563, 253.56), Vector2(-623.027, 230.757), Vector2(-667.647, 257.36)]
+}
+
+[sub_resource type="Animation" id="Animation_h14vi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blue_nose:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-117.339, -54.2737)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hmv50"]
+_data = {
+"RESET": SubResource("Animation_h14vi"),
+"nariz_5": SubResource("Animation_fdgyt")
+}
 
 [node name="Combate" type="Node2D"]
 scale = Vector2(1.007, 0.994766)
@@ -99,15 +136,21 @@ fit_content = true
 script = SubResource("GDScript_sxsv5")
 
 [node name="blue_nose" type="Sprite2D" parent="Clown1"]
-position = Vector2(-94.9759, -62.0098)
+position = Vector2(-117.339, -54.2737)
 scale = Vector2(1.73721, 1.80562)
 texture = ExtResource("7_j7nkh")
+centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 31, 33)
 
 [node name="Marker2D" type="Marker2D" parent="Clown1/blue_nose"]
 position = Vector2(-2.27803, 199.187)
 scale = Vector2(2.29392, 2.27752)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clown1"]
+libraries = {
+"": SubResource("AnimationLibrary_hmv50")
+}
 
 [node name="KeypressedTimer" type="Timer" parent="."]
 
