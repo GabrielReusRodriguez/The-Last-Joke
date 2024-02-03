@@ -31,7 +31,7 @@ var used_index = []
 
 const winning_points = 100
 const penalty_points = 5
-const keyPress_timeout = 1.5
+const keyPress_timeout = 11.5
 
 func init_pool_jokes() -> void:
 	var jokes_path = "res://data/jokes.txt"
@@ -96,6 +96,10 @@ func _unhandled_input(event: InputEvent) -> void:
 					hit_index = 0
 					used_index.push_back(index_rnd)
 				else:
+					var nariz
+					nariz = get_node("Clown1/AnimationPlayer")
+					nariz.play("nariz_5")
+					await get_tree().create_timer(2.0).timeout
 					get_tree().change_scene_to_file("res://primer intento.tscn")
 					#print ("Se le cae la nariz")
 				#Sino, sigues jugando....
