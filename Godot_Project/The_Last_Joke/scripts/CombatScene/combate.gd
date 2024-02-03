@@ -126,7 +126,8 @@ func _on_keypressed_timer_timeout():
 
 func _set_score_color() -> void:
 	if (score >= winning_points):
-		$TextureRect/Num_points.set("theme_override_colors/font_color",COLOR_RED)
+		#$TextureRect/Num_points.set("theme_override_colors/font_color",COLOR_RED)
+		$TextureRect/Num_points.set("theme_override_colors/font_color",ColorLibrary.COLOR_YELLOW)
 		return
 	if (score >= 2 * winning_points / 3):
 		$TextureRect/Num_points.set("theme_override_colors/font_color",COLOR_ORANGE)
