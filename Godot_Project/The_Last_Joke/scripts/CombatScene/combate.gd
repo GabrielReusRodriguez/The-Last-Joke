@@ -100,11 +100,10 @@ func _unhandled_input(event: InputEvent) -> void:
 					nariz = get_node("Clown1/AnimationPlayer")
 					nariz.play("nariz_5")
 					await get_tree().create_timer(2.0).timeout
-					get_tree().change_scene_to_file("res://primer intento.tscn")
+					get_tree().change_scene_to_file("res://scenes/primer intento.tscn")
 					#print ("Se le cae la nariz")
 				#Sino, sigues jugando....
-		else:
-			#en caso de errores#
+		else:			#en caso de errores#
 			hit_index = 0
 			texto_objetivo.text = quested_text
 			score = 0	

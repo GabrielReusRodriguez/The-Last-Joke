@@ -16,4 +16,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		var typed_event = event as InputEventKey
 		var key_typed = PackedByteArray([typed_event.unicode]).get_string_from_utf8()
 		if key_typed.to_upper() == 'F':
-			get_tree().change_scene_to_file("res://primer intento.tscn")
+			get_tree().change_scene_to_file("res://scenes/primer intento.tscn")
